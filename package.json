@@ -1,0 +1,13 @@
+{
+  "name": "",
+  "version": "",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "concat-stream": "^1.6.2",
+    "discord.js": "^11.3.2",
+    "fs": "0.0.1-security",
+    "request": "^2.87.0",
+    "request-promise": "^4.2.2",
+    "strawpoll": "^1.1.0"
+  }
+}
