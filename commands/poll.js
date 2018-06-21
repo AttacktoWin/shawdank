@@ -12,6 +12,8 @@ exports.run = (clients, message, args) => {
         pollOptions.push(args[i]);
     }
 
+    console.log(pollOptions);
+
     var poll = strawpoll.create({
         title: pollTitle,
         options: pollOptions,
@@ -21,7 +23,7 @@ exports.run = (clients, message, args) => {
     })
 
     poll.then((response) => {
-        console.log(response)
+        console.log(response);
     }).catch((error) => {
         console.log(error)
     })
