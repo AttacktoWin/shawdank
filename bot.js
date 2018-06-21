@@ -1,8 +1,6 @@
 const settings = require('./settings.json');
 const fs = require('fs');
 
-const {google} = require('googleapis');
-
 const Discord = require('discord.js');
 
 const prefix = settings.prefix;
