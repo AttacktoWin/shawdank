@@ -1,5 +1,11 @@
 const ytdl = require('ytdl-core');
+const search =require('youtube-search');
 const queue = {};
+
+const opts = {
+    maxResults: 1,
+    key: 'AIzaSyDiPd_eVG2aDBEFoJw84cBNaDq3fC6VHXo'
+};
 
 exports.run = (clients, message, args) => {
     if (args.length < 1) {
@@ -14,7 +20,15 @@ exports.run = (clients, message, args) => {
 
             var server = queue[message.guild.id];
 
-            server.queue.push(args[1]);
+            if (ytdl.validateURL(args[1])) {
+                server.queue.push(args[1]);
+            } else {
+                search(args[1], opts, function(err, results) {
+                    if (err) return console.log(err);
+
+                    server.queue.push(results);
+                })
+            }
 
             if (!message.guild.voiceChannel) {
                 if (message.member.voiceChannel) {
