@@ -10,8 +10,8 @@ const bot = new Discord.Client({disableEveryone: true});
 fs.readdir("./events/", (err, files) => {
     if (err) return console.error(err);
     files.forEach(file => {
-      let eventFunction = require(`./events/${file}`);
-      let eventName = file.split(".")[0];
+      var eventFunction = require(`./events/${file}`);
+      var eventName = file.split(".")[0];
       // super-secret recipe to call events with all their proper arguments *after* the `client` var.
       bot.on(eventName, (...args) => eventFunction.run(bot, ...args));
     });
@@ -40,7 +40,7 @@ bot.on('message', async message => {
     console.log(args);
 
     try {
-        let commandFile = require(`./commands/${command}.js`);
+        var commandFile = require(`./commands/${command}.js`);
         commandFile.run(bot, message, args);
       } catch (err) {
         console.error(err);
