@@ -4,7 +4,7 @@ const queue = {};
 
 const opts = {
     maxResults: 1,
-    key: 'AIzaSyDiPd_eVG2aDBEFoJw84cBNaDq3fC6VHXo'
+    key: '[insert key here]'
 };
 
 exports.run = (clients, message, args) => {

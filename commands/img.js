@@ -1,6 +1,6 @@
 const GoogleImages = require('google-images');
 
-const client = new GoogleImages("004327231332556375843:noohb2rnyb8", "AIzaSyDiPd_eVG2aDBEFoJw84cBNaDq3fC6VHXo");
+const client = new GoogleImages("insert client id here", "[insert key here]");
 
 exports.run = (clients, message, args) => {
     if (args.length > 0) {
