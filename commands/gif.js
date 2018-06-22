@@ -1,5 +1,5 @@
 const GphApiClient = require('giphy-js-sdk-core');
-const giphy = GphApiClient('QHWA1X8CvM4bRdsRKBSXaqcNZo04P176');
+const giphy = GphApiClient('[insert key here]');
 
 exports.run = (clients, message, args) => {
     if (args.length > 0) {
